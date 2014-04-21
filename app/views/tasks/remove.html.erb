@@ -1,0 +1,10 @@
+<%= form_for @task, url: remove_task_path(@task), method: "delete" do |f| %>
+  <p>
+    <%= "Deseja mesmo remover a tarefa?" %>
+  </p>
+
+  <p class="submit">
+    <%= f.submit "Remover", class: "button" %>
+    <%= link_to  "Voltar", root_path %>
+  </p>
+<% end %>

@@ -1,0 +1,7 @@
+<%= form_for task, url: url, html: {class: "task-form"} do |f| %>
+  <p>
+    <%= f.label :title, "Nome da tarefa" %>
+    <%= f.text_field :title, placeholder: "Digite a tarefa", autofocus: true %>
+    <%= f.submit "Criar tarefa", class: "button" %>
+  </p>
+<% end %>

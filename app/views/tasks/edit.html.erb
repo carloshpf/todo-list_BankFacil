@@ -1,0 +1,13 @@
+<% if @task.errors.any? %>
+  <div class="error-messages">
+    <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        
+          <%= message %>
+        
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= render "form", task: @task, url: edit_task_path(@task) %>

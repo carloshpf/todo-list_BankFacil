@@ -1,0 +1,24 @@
+<% content_for :page_title do %>
+  <%= 
+  count = @tasks.reject(&:done?).size
+	case count
+	when 0
+		"Nenhuma tarefa pendente"
+	when 1
+		"1 tarefa pendente"
+	else
+		"#{count} tarefas pendentes"
+	end%>
+<% end %>
+
+<%= render "form", task: @task, url: new_task_path %>
+
+<%= form_tag toggle_task_status_path, method: "put" do %>
+  <ul>
+    <%= render @tasks %>
+  </ul>
+
+  <p class="submit">
+    <%= submit_tag "Atualizar tarefas", class: "button" %>
+  </p>
+<% end %>

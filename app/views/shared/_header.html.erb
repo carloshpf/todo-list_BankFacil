@@ -1,0 +1,10 @@
+<header>
+  <h1>todos</h1>
+  <p>
+    <% if (content_title = yield(:page_title)).present? %>
+      <%= content_title %>
+    <% else %>
+      <%= "Edição/Remoção" %>
+    <% end %>
+  </p>
+</header>

@@ -1,0 +1,11 @@
+<li class="<%= task.status %>">
+  <%= hidden_field_tag "tasks[#{task.id}]", "pending" %>
+  <%= check_box_tag "tasks[#{task.id}]", "done", task.done?, id: "task-#{task.id}" %>
+
+  <label for="task-<%= task.id %>"><%= task.title %></label>
+
+  <span class="actions">
+    <%= link_to "Editar", edit_task_path(task) %>
+    <%= link_to "Remover", remove_task_path(task) %>
+  </span>
+</li>
